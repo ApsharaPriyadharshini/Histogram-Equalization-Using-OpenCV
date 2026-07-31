@@ -84,29 +84,33 @@ plt.imshow(img, cmap='gray')
 plt.title('Original Image')
 plt.show()
 
+---
 2. Plot the histogram of the grayscale image.
 plt.hist(img.ravel(), 256, range=[0,256])
 plt.title('Original Image Histogram')
 plt.show()
-
+---
 3. Apply histogram equalization.
 img_eq = cv2.equalizeHist(img)
-
+---
 4. Display the histogram of the equalized image.
 plt.hist(img_eq.ravel(), 256, range=[0,256])
 plt.title('Equalized Histogram')
 plt.show()
 
+---
 5. Display the equalized grayscale image.
 plt.imshow(img_eq, cmap='gray')
 plt.title('Equalized Image')
 plt.show()
 
+---
+
 6. Read the image in color mode and convert to HSV.
 img = cv2.imread('parrot.jpg', cv2.IMREAD_COLOR)
 
 img_hsv = cv2.cvtColor(img, cv2.COLOR_BGR2HSV)
-
+---
 7. Apply histogram equalization to the V channel.
 img_hsv[:, :, 2] = cv2.equalizeHist(img_hsv[:, :, 2])
 
